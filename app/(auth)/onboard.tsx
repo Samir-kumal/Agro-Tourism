@@ -7,7 +7,7 @@ const OnBoard = () => {
   return (
     <View>
       <Text>OnBoard</Text>
-      <TouchableOpacity onPress={()=> router.push("/(tabs)")} style ={{backgroundColor:Colors.primary,paddingHorizontal:12}}>
+      <TouchableOpacity onPress={()=> router.push("/(auth)/signin")} style ={{backgroundColor:Colors.primary,paddingHorizontal:12}}>
         <Text>
           Start
         </Text>

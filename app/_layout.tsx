@@ -9,6 +9,7 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { StatusBar, useColorScheme } from "react-native";
 import Colors from "../constants/Colors";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -51,7 +52,8 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <Stack screenOptions={{
+<SafeAreaProvider>
+<Stack screenOptions={{
       headerStyle:{
         backgroundColor:Colors.primary,
         
@@ -59,15 +61,33 @@ function RootLayoutNav() {
       
 
     }}>
-         {/* <Stack.Screen
-        name="(auth)/onboard"
+         <Stack.Screen
+        name="(auth)/signin"
+        options={{
+          headerShown: false,
+        }}
+      />
+         <Stack.Screen
+        name="(auth)/registration1"
+        
         options={{
           headerShown: true,
+          title:"Farmer Registration"
         }}
-      /> */}
+      />
+         <Stack.Screen
+                name="(auth)/registration2"
+
+        options={{
+          headerShown: true,
+          title:"Farmer Registration"
+
+        }}
+      />
       
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
    
     </Stack>
+</SafeAreaProvider>
   );
 }
