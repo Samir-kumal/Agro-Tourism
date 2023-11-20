@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import Colors from "../../constants/Colors";
-import { FontAwesome, Ionicons, Foundation, Entypo } from "@expo/vector-icons";
+import { FontAwesome, Ionicons, Foundation, Entypo,MaterialIcons } from "@expo/vector-icons";
 import HeaderRight from "../../components/HeaderRight";
 
 const TabLayout = () => {
@@ -38,6 +38,8 @@ const TabLayout = () => {
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="newspaper-o" size={24} color={color} />
           ),
+          headerRight: () => <HeaderRight colors={Colors.secondary} />,
+          
         }}
       />
       <Tabs.Screen
@@ -47,17 +49,10 @@ const TabLayout = () => {
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="suitcase" size={24} color={color} />
           ),
+          headerRight: () => <HeaderRight colors={Colors.secondary} />,
         }}
       />
-      <Tabs.Screen
-        name="diary"
-        options={{
-          title: "Diary",
-          tabBarIcon: ({ color, size }) => (
-            <Foundation name="clipboard-notes" size={24} color={color} />
-          ),
-        }}
-      />
+   
       <Tabs.Screen
         name="market"
         options={{
@@ -65,6 +60,17 @@ const TabLayout = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="cart" size={24} color={color} />
           ),
+          headerRight: () => <HeaderRight colors={Colors.secondary} />,
+        }}
+      />
+         <Tabs.Screen
+        name="menu"
+        options={{
+          title: "Menu",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="menu" size={24} color={color} />
+          ),
+          headerRight: () => <HeaderRight colors={Colors.secondary} />,
         }}
       />
     </Tabs>

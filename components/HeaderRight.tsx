@@ -12,14 +12,14 @@ interface HeaderRightProps {
 const HeaderRight: React.FC<HeaderRightProps> = ({colors}) => {
   return (
     <View style={{display:"flex",flexDirection:"row",padding:10}}>
-     <TouchableOpacity onPress={()=>router.push("/(statusbar)/notification")}>
+     <TouchableOpacity className='mx-2' onPress={()=>router.push("/(statusbar)/notification")}>
      <MaterialCommunityIcons name="bell-ring" size={24} color={colors} />
     </TouchableOpacity> 
-    <TouchableOpacity onPress={()=>router.push("/(statusbar)/profile")}>
+    <TouchableOpacity className='mx-2'  onPress={()=>router.push("/(statusbar)/profile")}>
 
     <Ionicons name="person" size={24} color={colors}/>
     </TouchableOpacity> 
-    <TouchableOpacity>
+    <TouchableOpacity className='ml-2' >
     <Entypo name="dots-three-vertical" size={24} color={colors} />
     </TouchableOpacity> 
     </View>

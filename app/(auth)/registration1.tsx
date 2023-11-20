@@ -3,8 +3,8 @@ import React from "react";
 import Colors from "../../constants/Colors";
 import Button from "../../components/common/Button";
 import { router } from "expo-router";
+import { width } from "../../helper/Dimensions";
 
-export const width = Dimensions.get("window").width;
 
 const Registration = () => {
   const height = Dimensions.get("window").height;

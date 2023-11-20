@@ -3,5 +3,6 @@ export default {
   secondary:"#ffffff",
   text:"#ffffff",
   black:"#000000",
+  theme:"#E4FFE7",
 
 } 
