@@ -86,7 +86,27 @@ function RootLayoutNav() {
       />
       
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-   
+      <Stack.Screen
+                name="(statusbar)/notification"
+                
+
+        options={{
+          headerShown: true,
+          title:"Notification",
+          animation:"fade_from_bottom"
+
+        }}
+      />
+      <Stack.Screen
+                name="(statusbar)/profile"
+
+        options={{
+          headerShown: true,
+          title:"Profile",
+          animation:"fade_from_bottom"
+
+        }}
+      />
     </Stack>
 </SafeAreaProvider>
   );
