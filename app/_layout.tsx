@@ -4,6 +4,7 @@ import {
   DefaultTheme,
   ThemeProvider,
 } from "@react-navigation/native";
+import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
@@ -45,75 +46,70 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <PaperProvider>
+      <RootLayoutNav />
+    </PaperProvider>
+  );
 }
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-<SafeAreaProvider>
-<Stack screenOptions={{
-      headerStyle:{
-        backgroundColor:Colors.primary,
-        
-      },
-      
-
-    }}>
-         <Stack.Screen
-        name="(auth)/onboard"
-        options={{
-          headerShown: false,
+    <SafeAreaProvider>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: Colors.primary,
+          },
         }}
-      />
-         <Stack.Screen
-        name="(auth)/signin"
-        options={{
-          headerShown: false,
-        }}
-      />
-         <Stack.Screen
-        name="(auth)/registration1"
-        
-        options={{
-          headerShown: true,
-          title:"Farmer Registration"
-        }}
-      />
-         <Stack.Screen
-                name="(auth)/registration2"
+      >
+        <Stack.Screen
+          name="(auth)/onboard"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="(auth)/signin"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="(auth)/registration1"
+          options={{
+            headerShown: true,
+            title: "Farmer Registration",
+          }}
+        />
+        <Stack.Screen
+          name="(auth)/registration2"
+          options={{
+            headerShown: true,
+            title: "Farmer Registration",
+          }}
+        />
 
-        options={{
-          headerShown: true,
-          title:"Farmer Registration"
-
-        }}
-      />
-      
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen
-                name="(statusbar)/notification"
-                
-
-        options={{
-          headerShown: true,
-          title:"Notification",
-          animation:"fade_from_bottom"
-
-        }}
-      />
-      <Stack.Screen
-                name="(statusbar)/profile"
-
-        options={{
-          headerShown: true,
-          title:"Profile",
-          animation:"fade_from_bottom"
-
-        }}
-      />
-    </Stack>
-</SafeAreaProvider>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="(statusbar)/notification"
+          options={{
+            headerShown: true,
+            title: "Notification",
+            animation: "fade_from_bottom",
+          }}
+        />
+        <Stack.Screen
+          name="(statusbar)/profile"
+          options={{
+            headerShown: true,
+            title: "Profile",
+            animation: "fade_from_bottom",
+          }}
+        />
+      </Stack>
+    </SafeAreaProvider>
   );
 }
